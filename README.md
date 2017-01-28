@@ -1,7 +1,8 @@
 # CreditCalculater
 Calculate a number of Credit granted and, GPA( Grade Point Average).
 
-大学の成績照会のページから、どの群の科目の単位をどれだけとったかと、GPAを算出するプログラムです。
+大学の成績照会のページ<https://iaidp.ia.waseda.jp/idp/profile/SAML2/Redirect/SSO;jsessionid=C1C4CD947A9D52B605515638EA7D720C?executio    n=e1s1>から、どの群の科目の単位をどれだけとったかと、GPAを算出するプログラムです。
+(残念ながら、特定の一つの大学しか対応していません。)
 
 ##前提となるもの
 Python2.xさえ使えれば、特に用意するものはありません。

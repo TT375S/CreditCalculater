@@ -1,0 +1,665 @@
+<HTML>
+<HEAD>
+<TITLE>
+成績照会</TITLE><LINK href=style.css type=text/css rel=StyleSheet>
+<!-- mod 2013/10/18 2013_成績システム移行 KnownProblem_17 start -->
+<!-- <meta http-equiv=Content-Type content="text/html; charset=EUC-JP">-->
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<!-- mod 2013/10/18 2013_成績システム移行 KnownProblem_17 end -->
+<meta http-equiv="content-Script-Type" content="text/javascript">
+<meta http-equiv="content-Style-Type" content="text/css">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="robots" content="noindex,nofollow">
+</HEAD>
+<BODY bgcolor = "#FFFFFF" TEXT="#000000" leftMargin="0" topMargin="0" Marginwidth="0" Marginheight="0">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	var eflag = 0;
+	var myWin;
+	function check(name) {
+		
+		myWin = window.open('./epb2052.htm', name, 'scrollbars=yes,resizable=yes,width=800,height=500');
+		myWin.focus();
+		eflag = 1;
+		return myWin;
+		
+	}
+	
+	function js_check() {
+		if (document.javaEnabled()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+-->
+</SCRIPT>
+<TABLE cellSpacing="0" width="100%" border="0" class="basecolor">
+
+  <TBODY>
+
+  <TR height="20">
+
+	<td class="header" width="70%">&nbsp;&nbsp;早稲田大学事務サービス
+	</td>
+
+  </TR>
+
+  </tbody>
+
+</table>
+
+<TABLE cellSpacing="0" width="100%" border="0" class="basecolor">
+
+  <tbody>
+
+  <TR>
+
+    <TD class="welcome" >&nbsp;&nbsp;Welcomeback&nbsp;戸祭　隆行&nbsp;さん 
+
+    </TD>
+
+	<td class="welcome" style="text-align: right" width="15%">&nbsp;&nbsp;
+
+<INPUT TYPE="SUBMIT" VALUE=閉じる onClick="Javaxcript:window.close()">
+    </TD>  
+
+  </TR>
+
+  </tbody>
+
+</table>
+
+<TABLE cellSpacing="0" width="100%" border="0" class="basecolor">
+
+  <tbody>
+
+  <TR height="20">
+
+    <TD class="navibar" width="70%">
+
+&nbsp;&nbsp;学生向けサービス&gt;&gt;成績照会
+    </TD>
+
+	<td class="navibar" width="30%" style="text-align: right">&nbsp;
+
+
+	</td>
+
+  </TR>
+
+  </TBODY>
+
+</TABLE><TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=90%>
+<TR>
+<TD WIDTH=5%><BR></TD>
+<TD>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	document.write("<FORM NAME=FRM_TANI METHOD=POST>");
+	document.write("<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%>\n");
+	document.write("<TR CLASS='basechar'>\n");
+	document.write("\t<TD COLSPAN=2>");
+-->
+</SCRIPT>
+<NOSCRIPT>
+<FORM NAME=FRM_TANI METHOD=POST ACTION="./epb2052.htm" TARGET="_BLANK">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%>
+<TR CLASS='basechar'>
+	<TD COLSPAN=2>
+</NOSCRIPT>
+<INPUT TYPE=HIDDEN NAME=hidden_counter VALUE="1">
+1W153104　　戸祭　隆行さんの成績です。</TD>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	document.write("<TD ALIGN=RIGHT><INPUT TYPE=BUTTON NAME=P_TANI VALUE=\"単位修得状況の照会\" onClick=\"return check('win_tani')\"></TD>");
+-->
+</SCRIPT>
+<NOSCRIPT>
+	<TD ALIGN=RIGHT><INPUT TYPE=SUBMIT NAME=P_TANI VALUE='単位修得状況の照会'></TD>
+</NOSCRIPT>
+<TABLE BORDER=1 CELLPADDING=0 CELLSPACING=1>
+<TR>	<TD width=95><B>&nbsp;&nbsp;学籍状態&nbsp;&nbsp;</B></TD>
+	<TD>在学中</TD>
+</TR><TR>	<TD width=95><B>&nbsp;&nbsp;判定結果&nbsp;&nbsp;</B></TD>
+	<TD><BR></TD>
+</TR><TR>	<TD width=95><B>&nbsp;&nbsp;外国語&nbsp;&nbsp;</B></TD>
+	<TD>【第一外国語】　【第二外国語】</TD>
+</TR><TR>	<TD width=95><B>&nbsp;&nbsp;クラス&nbsp;&nbsp;</B></TD>
+	<TD>007</TD>
+</TR></TABLE></FORM>
+<FORM ACTION=/kyomu/epb2051.htm NAME=FRM_DETAIL METHOD=POST>
+<INPUT TYPE=HIDDEN NAME=hidden_counter VALUE="1">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%>
+<TR CLASS="basechar">
+	<TD>
+<INPUT TYPE=TEXT MAXLENGTH=4 NAME=P_YEAR SIZE=5>&nbsp;年度分のみ&nbsp;<INPUT TYPE=CHECKBOX NAME=P_DISPALL CHECKED>&nbsp;全て&nbsp;		<INPUT TYPE=SUBMIT NAME=P_GO VALUE="表示">
+	</TD>
+	<TD ALIGN=RIGHT>
+						<INPUT TYPE=BUTTON NAME=P_PRINTGO VALUE="印刷" onClick="window.print()">
+			</TD>
+<tr><td WIDTH=70%><br></td>	<td width=30% CLASS=tinyfont>※成績欄に「*」がついている科目は成績がまだ決定していない科目です。今しばらくお待ちください。</td></tr><tr><td WIDTH=70%><br></td>	<td width=30% CLASS=tinyfont>※この成績照会画面は印刷し、個人で参照することができますが、公式な証明書ではありません。</td></tr></TR>
+</TABLE>
+<BR>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=1 WIDTH=100%>
+<TR CLASS="operationboxt">
+	<TH WIDTH=40%>科目名</TH>
+<!-- ＧＰ対応(要項適用年度で表示を変更) 2010/08/11 CRS
+	<TH WIDTH=15%>取得年度</TH>
+	<TH WIDTH=15%>学期</TH>
+	<TH WIDTH=15%>単位</TH>
+	<TH WIDTH=15%>成績</TH>-->
+	<TH WIDTH=12%>取得年度</TH>
+	<TH WIDTH=12%>学期</TH>
+	<TH WIDTH=12%>単位</TH>
+	<TH WIDTH=12%>成績</TH>
+	<TH WIDTH=12%>ＧＰ</TH>
+<!-- ここまで -->
+</TR>
+<TR CLASS='operationboxf'>
+	<TD>◎Ａ群◎</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【複合領域科目】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《基礎科目》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;国際知財政策Ａ</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;科学・技術の社会史</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;都市と地域の社会学</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;臨場感とメディア技術</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;日本科学技術史</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;ドイツ語文化入門 (6)</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;社会調査データの分析</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【外国語科目】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《外国語　英語》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Communication Strategies 1　火１ヒントン</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>1</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Communication Strategies 2　火１ヒントン</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>1</TD>
+	<TD>C</TD>
+	<TD>1</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Academic Lecture Comprehension 1　木３ダイヤー</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>1</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Academic Lecture Comprehension 2　木３ダイヤー</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>1</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Concept Building And Discussion 1　水５ダイヤー</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>1</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Concept Building And Discussion 2　水５ダイヤー</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>1</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Academic Reading 1　月５スロボッドニウ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>1</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Academic Reading 2　月５スロボッドニウ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>1</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>◎Ｂ群◎</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【数学】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《数学》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;基礎の数学　基幹(7)-I</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;数学Ａ２（線形代数）　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>通年</TD>
+	<TD>5</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;数学Ｂ２（微分積分）　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>通年</TD>
+	<TD>6</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【自然科学】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《自然科学　物理学》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;基礎物理学Ａ　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;基礎物理学Ｂ　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>C</TD>
+	<TD>1</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《自然科学　化学》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;化学Ｃ　基幹(2)</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【実験・実習・制作】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《実験・実習・制作》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;理工学基礎実験１Ａ　Iブロック</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>3</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;理工学基礎実験１Ｂ　Iブロック</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>3</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;理工学基礎実験２Ａ　情報理工・情報通信</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【情報関連科目】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《情報関連科目》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Cプログラミング入門　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;Cプログラミング　基幹(7)</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;FORTRANプログラミング入門　情報・通信</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A+</TD>
+	<TD>4</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>◎Ｃ群(専門教育科目)◎</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【専門必修】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《専門必修》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;プログラミングＡ　1班</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>3</TD>
+	<TD>A+</TD>
+	<TD>4</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;情報数学Ａ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;回路理論Ａ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;論理回路</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;コンピュータアーキテクチャＡ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;電子回路</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;情報理工学実験Ａ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;情報数学Ｂ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;アルゴリズムとデータ構造Ａ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;アルゴリズムとデータ構造Ｂ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【専門選択必修】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;情報通信基礎</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;メディア表現技術の基礎</TD>
+	<TD>2015</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【専門選択】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　　《専門選択》</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;確率・統計概論</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A+</TD>
+	<TD>4</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;信号処理Ａ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>A</TD>
+	<TD>3</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;情報理論Ａ</TD>
+	<TD>2016</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;回路理論Ｂ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;信号処理Ｂ</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;通信理論</TD>
+	<TD>2016</TD>
+	<TD>秋期</TD>
+	<TD>2</TD>
+	<TD>＊</TD>
+	<TD>＊</TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>◎Ｄ群(保健体育・自主挑戦科目)◎</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>　【自主挑戦科目】</TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+	<TD><BR></TD>
+</TR><TR CLASS='operationboxf'>
+	<TD>&nbsp;&nbsp;理工文化論</TD>
+	<TD>2015</TD>
+	<TD>春期</TD>
+	<TD>2</TD>
+	<TD>B</TD>
+	<TD>2</TD>
+</TR></TABLE>
+</FORM>
+</TD>
+</TR>
+</TABLE>
+<table class="subcolor" style="text-align:center;width:100%;" cellspacing="0" cellpadding="0" border="0" summary="copyright">
+	<tbody>
+		<tr>
+			<td><hr style="width:80%;"></td>
+		</tr>
+		<tr>
+			<td>Copyright (C) Media Network Center, Waseda University 2002-2017. All rights reserved.</td>
+		</tr>
+		<tr>
+			<td style="height:30px;vertical-align:top;"><a href="http://www.waseda.jp/mnc/COPYRIGHT/index.html" target="_blank">著作権・使用許諾条件</a> / <a href="http://www.waseda.jp/mnc/info-sec/waseda_information_security_waseda.html" target="_blank">個人情報保護</a> / <a href="http://www.waseda.jp/mnc/CHARACTER/index.html" target="_blank">使用不可文字について</a> ()</td>
+		</tr>
+	</tbody>
+</table>
+</BODY>
+</HTML>
+
+

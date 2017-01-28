@@ -20,7 +20,7 @@ if len(args) > 1:
 			f_i.write(line)
 		#開き直さないと、f_i.readline()で一行目から読み込まれない。書き込んだ最後からの読み込みになってしまう。
 		f_i = open(input_file)
-#webからダウンロード
+#webからURLのクエリ
 	elif args[1] == "-w":
 		input_file ="htmlsource.txt"
 		form = cgi.FieldStorage()
@@ -38,30 +38,37 @@ else :
 
 line = f_i.readline()
 credit = {"A+":0, "A":0, "B":0, "C":0, "F":0, "G":0, "H":0 }
-#credit = {}
 group = {}
 currentGroup = "NONEGROUP"
 GPA = 0
 classNum = 0
+
+#htmlを解釈して、履修した授業数を群ごとにカウント、スコアも計算
 while line:
-	if line.find("◎") != -1:
+#	print line
+	#群(A群C群とかのあれ)をセット
+	if line.find("群") != -1:
 		group[line] = 0
+	#	print line.strip()
 		currentGroup = line
+	#授業の成績を調べる
 	elif line.find("operationboxf") != -1 and currentGroup != "NONEGROUP":
 		group[currentGroup] += 1
 		line = f_i.readline()
 		line = f_i.readline()
 		line = f_i.readline()
 		line = f_i.readline()
-		
+		#授業の単位数	
 		creditNum =int(line.strip().replace("<TD>","").replace("</TD>","").replace("<BR>", "0").replace("＊", "0"))
 		line = f_i.readline()
+		#成績評価
 		grade = line.strip().replace("<TD>","").replace("</TD>","") 	
 #		print grade
 		line = f_i.readline()
+		#授業のスコア
 		score = int(line.strip().replace("<TD>","").replace("</TD>","").replace("<BR>", "0").replace("＊", "0"))
 		GPA += score
-		print classNum
+	#	print classNum
 		if grade in credit:
 			credit[grade] += 1
 		else:
@@ -69,11 +76,17 @@ while line:
 	line = f_i.readline()	
 
 print "受講している授業名の、htmlからの抽出が終了しました。"
+for key in group.keys():
+	print key + " "+ str(group[key])
+
+print "\n---評価別の数---"
 for key in credit.keys():
 	print key + " " + str(credit[key])
 	classNum += credit[key]
 classNum -= credit["<BR>"]	
+print "\n---成績計算---"
 print "scoreSum " + str(GPA)
-print "classNum" + str(classNum)
-print "GPA" + str(float(GPA)/(classNum-credit["＊"]))
+print "class " + str(classNum)
+print "finishedClass " +str(classNum -credit["＊"])
+print "GPA " + str(float(GPA)/(classNum-credit["＊"]))
 

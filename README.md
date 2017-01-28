@@ -17,7 +17,7 @@ Python2.xさえ使えれば、特に用意するものはありません。
 `$ python digestHTML.py -l`  
   
 すると、入力待ちになりますので、  
-後は、大学の成績照会ページ<https://iaidp.ia.waseda.jp/idp/profile/SAML2/Redirect/SSO;jsessionid=C1C4CD947A9D52B605515638EA7D720C?execution=e1s1>に行って、成績が表示されているページのHTMLソースコードをコピーして、ターミナルに貼り付けます。   
+後は、大学の成績照会ページ<https://my.waseda.jp/login/login>に行って、成績が表示されているページのHTMLソースコードをコピーして、ターミナルに貼り付けます。   
 
 ##出力例  
 	受講している授業名の、htmlからの抽出が終了しました。
